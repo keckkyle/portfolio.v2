@@ -39,7 +39,7 @@ body {
   transform-origin: center;
   transform: translateX(-50%);
   left: 50%;
-  bottom: calc(100vh - (60vw + 1em));
+  bottom: calc(100vh - (62vw + 5em));
   z-index: 1;
 }
 
@@ -113,7 +113,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 4em;
+  height: 5em;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -126,8 +126,9 @@ body {
   width: 40%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding: 0.5em 2em 0;
+  padding: 0 2em 0.5em;
 }
 
 .NavItem p {
@@ -365,15 +366,8 @@ body {
 
 }
 
-@media screen and (max-height: 510px) and (min-width: 500px){
-  .UserDetails,
-  .UserDetails.HiddenDetails {
-    overflow: scroll;
-    padding: 0.5em 0.7em 4em;
-  }
-}
-
-@media screen and (max-height: 520px) and (max-width: 500){
+@media screen and (max-height: 510px){
+  @media (max-width: 499px) {
   .UserInfo p {
     margin: 0.2em 0;
   }
@@ -392,6 +386,20 @@ body {
   .IconLink {
     margin: 0.2em 0.5em;
   }
+}
+
+  @media (min-width: 500px) {
+    .UserDetails,
+    .UserDetails.HiddenDetails {
+      overflow: scroll;
+      padding: 0.5em 0.7em 4em;
+    }
+  }
+
+}
+
+@media screen and (max-height: 510px) and (min-width: 500px){
+
 }
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
