@@ -6,7 +6,7 @@ const ProfileImage = (props) => {
     }
 
     return(
-        <div className="ProfileImage" style={imageStyle} onClick={props.setDetails}></div>
+        <div className="ProfileImage" style={imageStyle}></div>
     )
 
 }

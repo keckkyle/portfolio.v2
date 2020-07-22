@@ -18,7 +18,6 @@ class App extends React.Component {
   componentDidMount = () => {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth)
-    this.setDisplay()
   }
 
   updateWidth = () => {
@@ -45,12 +44,6 @@ class App extends React.Component {
     })
   }
 
-  showDetails = () => {
-    this.setState({
-      currentView: "/",
-    })
-  }
-
   componentDidUpdate = (prevProp, prevState) => {
     if(prevState.currentView !== this.state.currentView){
       this.setDisplay()
@@ -71,7 +64,6 @@ class App extends React.Component {
           show={displayDetails}
           image={image} 
           setDetails={this.setDetails}
-          showDetails={this.showDetails}
         />
         <MobileView>
           <div className="RotateDevice">

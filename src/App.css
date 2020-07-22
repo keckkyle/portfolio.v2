@@ -1,4 +1,8 @@
 /* background-color: #113d34; */
+.App {
+  background: #113d34;
+}
+
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   overflow: hidden;
@@ -9,11 +13,16 @@ body {
 }
 
 .Page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 5em;
+  right: 0;
+  background: white;
   text-align: justify;
   overflow: scroll;
   box-sizing: border-box;
-  padding: 0.5em 0.7em;
-  height: calc(100vh - 4.2em);
+  padding: 0.5em 0.7em 1.2em;
 }
 
 .Page h2 {
@@ -27,31 +36,13 @@ body {
 }
 
 .ProfileImage {
-  transition: all 0.35s linear;
-  position: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
-  width: 60vw;
-  padding-bottom: 60vw;
+  width: 60%;
+  padding-bottom: 60%;
   box-shadow: inset 0 0 10px 1px black;
-  transform-origin: center;
-  transform: translateX(-50%);
-  left: 50%;
-  bottom: calc(100vh - (62vw + 5em));
-  z-index: 1;
-}
-
-.HiddenDetails .ProfileImage {
-  bottom: 0.1em;
-  width: 65px;
-  padding-bottom: 65px;
-  border: 0.5em solid rgb(200, 200, 200);
-}
-
-.UserInfo {
-  padding-top: 65vw;
 }
 
 .UserInfo h1 {
@@ -64,29 +55,27 @@ body {
   margin: 0;
 }
 
-.UserDetails{
+.UserInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 5em;
   box-sizing: border-box;
   padding: 0.5em 0.7em;
   background: #113d34;
   text-align: center;
-  height: calc(100vh - 4em);
   color: rgb(200, 200, 200);
   transition: all 0.35s linear;
 }
 
-.UserDetails.HiddenDetails {
-  height: 0;
-  top: 100vh;
-  background: transparent;
-  padding: 0;
-}
-
-.HiddenDetails .ContactTypes,
 .HiddenDetails .UserInfo {
+  transition: all 0.35s linear;
+  transform: translateY(110vh);
   opacity: 0;
 }
 
@@ -94,7 +83,6 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding-top: 1em;
 }
 
 .IconLink, .IconLink:active {
@@ -112,11 +100,38 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100vw;
+  right: 0;
   height: 5em;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+}
+
+.nav-image-item {
+  transition: all 0.35s linear;
+  position: fixed;
+  transform-origin: center;
+  transform: translate(-50%, 20em);
+  bottom: .5em;
+  left: 50%;
+  opacity: 0;
+}
+
+.HiddenDetails .nav-image-item {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+
+.nav-image {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  border: 0.5em solid rgb(200, 200, 200);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: inset 0 0 10px 1px black;
 }
 
 .NavItem {
@@ -254,11 +269,6 @@ body {
   .ProfileImage {
     width: 250px;
     padding-bottom: 250px;
-    bottom: calc(100vh - (250px + 0.5em))
-  }
-  
-  .UserInfo {
-    padding-top: 250px;
   }
 }
 
@@ -281,18 +291,11 @@ body {
     opacity: 1;
   }
 
-  .UserInfo {
-    padding-top: calc(200px + 1em);
-  }
-
   .ProfileImage,
   .HiddenDetails .ProfileImage {
     width: 200px;
     padding-bottom: 200px;
     border: none;
-    left: 140px;
-    top: 0.5em;
-    bottom: auto;
   }
 
   .Page {
@@ -369,18 +372,12 @@ body {
 @media screen and (max-height: 510px){
   @media (max-width: 499px) {
   .UserInfo p {
-    margin: 0.2em 0;
-  }
-
-  .UserInfo {
-    padding-top: 52vw;
+    margin: 0;
   }
 
   .ProfileImage {
     width: 50vw;
     padding-bottom: 50vw;
-    margin: 0.2em auto;
-    bottom: calc(100vh - (50vw + 1em));
   }
 
   .IconLink {
@@ -395,10 +392,6 @@ body {
       padding: 0.5em 0.7em 4em;
     }
   }
-
-}
-
-@media screen and (max-height: 510px) and (min-width: 500px){
 
 }
 
@@ -418,12 +411,8 @@ body {
     color: rgb(200, 200, 200);
   }
 
-  .UserDetails {
-    height: 100vw;
-  }
-
   .RotateDevice img {
-    height: 70vh;
+    height: 60vh;
   }
   
   .RotateDevice p {
