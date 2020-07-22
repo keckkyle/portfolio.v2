@@ -1,38 +1,425 @@
-.App {
+/* background-color: #113d34; */
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  overflow: hidden;
+}
+
+.RotateDevice {
+  display: none;
+}
+
+.Page {
+  text-align: justify;
+  overflow: scroll;
+  box-sizing: border-box;
+  padding: 0.5em 0.7em;
+  height: calc(100vh - 4.2em);
+}
+
+.Page h2 {
   text-align: center;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Page p {
+  margin: 0;
+  padding: 0.5em 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ProfileImage {
+  transition: all 0.35s linear;
+  position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 60vw;
+  padding-bottom: 60vw;
+  box-shadow: inset 0 0 10px 1px black;
+  transform-origin: center;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: calc(100vh - (60vw + 1em));
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.HiddenDetails .ProfileImage {
+  bottom: 0.1em;
+  width: 65px;
+  padding-bottom: 65px;
+  border: 0.5em solid rgb(200, 200, 200);
+}
+
+.UserInfo {
+  padding-top: 65vw;
+}
+
+.UserInfo h1 {
+  font-size: 1.75em;
+  margin: 0;
+}
+
+.UserInfo h2 {
+  font-size: 1.25em;
+  margin: 0;
+}
+
+.UserDetails{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 0.5em 0.7em;
+  background: #113d34;
+  text-align: center;
+  height: calc(100vh - 4em);
+  color: rgb(200, 200, 200);
+  transition: all 0.35s linear;
+}
+
+.UserDetails.HiddenDetails {
+  height: 0;
+  top: 100vh;
+  background: transparent;
+  padding: 0;
+}
+
+.HiddenDetails .ContactTypes,
+.HiddenDetails .UserInfo {
+  opacity: 0;
+}
+
+.ContactTypes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 1em;
+}
+
+.IconLink, .IconLink:active {
+  font-size: 2em;
+  color: white;
+  margin: 0.5em 0.5em;
+}
+
+.IconLink:hover {
+  color: black;
+}
+
+.NavBar {
+  background: rgb(200, 200, 200);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.NavItem {
+  color: black;
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 40%;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  padding: 0.5em 2em 0;
+}
+
+.NavItem p {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.NavBar .nav-icon {
+  font-size: 1.5em;
+}
+
+.NavBar .nav-text {
+  font-size: 0.8em;
+}
+
+.page {
+  display: flex;
+}
+
+.navImage {
+  position: fixed;
+  top:0;
+  z-index: 0;
+}
+
+.Project {
+  border-bottom: 1px solid #113d34;
+}
+
+.Project:last-child {
+  border-bottom: none;
+}
+
+.Project img {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.3em;
+  box-shadow: 0 0 6px 1px #113d34;
+}
+
+.Project p {
+  font-size: 0.9em;
+}
+
+.project-details {
+  background: white;
+  overflow: scroll;
+  box-sizing: border-box;
+  padding: 0.5em 0.7em;
+  margin-top: 2.5em;
+  height: calc(100vh - 6.7em);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translateX(110vw);
+  transition: transform 0.4s linear;
+}
+
+.project-details h3 {
+  color: #113d34;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 0.5em;
+}
+
+.project-details.open {
+  transform: translateX(0)
+}
+
+.project-title {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0.2em 0.4em;
+  height: 2.5em;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform-origin: center;
+  transform: translate(110vw, 0);
+  transition: transform 0.4s linear;
+  background: rgb(200, 200, 200);
 }
 
-.App-link {
-  color: #61dafb;
+.project-title h4{
+  margin: 0;
+  margin-left: 1em
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.project-title button {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  outline: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.project-title.open{
+  transform: translate(0,0)
+}
+
+.project-link {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+}
+
+.project-link h4 {
+  margin: 0;
+  color: #113d34;
+}
+
+.project-link p {
+  font-size: 0.7em;
+  color: #113d3445;
+}
+
+@media screen and (min-width: 500px) {
+  .ProfileImage {
+    width: 250px;
+    padding-bottom: 250px;
+    bottom: calc(100vh - (250px + 0.5em))
   }
-  to {
-    transform: rotate(360deg);
+  
+  .UserInfo {
+    padding-top: 250px;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  .UserDetails, .NavBar {
+    width: 280px;
+    max-width: 280px;
+  }
+
+  .UserDetails.HiddenDetails {
+    background: #113d34;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    padding: 0.5em 0.7em;
+  }
+
+  .HiddenDetails .ContactTypes,
+  .HiddenDetails .UserInfo {
+    opacity: 1;
+  }
+
+  .UserInfo {
+    padding-top: calc(200px + 1em);
+  }
+
+  .ProfileImage,
+  .HiddenDetails .ProfileImage {
+    width: 200px;
+    padding-bottom: 200px;
+    border: none;
+    left: 140px;
+    top: 0.5em;
+    bottom: auto;
+  }
+
+  .Page {
+    padding-left: calc(280px + 0.7em);
+    height: 100vh;
+  }
+
+  .NavItem {
+    width: 50%;
+  }
+
+  .Project img {
+    margin: 0.6em auto;
+  }
+
+  .project-details {
+    height: calc(100vh - 2.7em) ;
+  }
+
+  .project-details,
+  .project-title {
+    width: calc(100vw - 280px);
+  }
+
+  .project-title.open,
+  .project-details.open {
+    transform: translate(280px,0)
+  }
+
+  .project-details img {
+    width: 40vw;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .Projects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-link p {
+    display: none;
+  }
+
+  .Projects .project-details {
+    position: static;
+    transform: translateX(0);
+    width: auto;
+    padding: 0;
+    margin-top: 0;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .project-details img {
+    margin: 0.6em;
+    width: 190px;
+  }
+
+  .project-link {
+    justify-content: center;
+    margin: 0.5em 0 0;
+    cursor: default;
+  }
+
+  .project-title {
+    display: none;
+  }
+
+}
+
+@media screen and (max-height: 510px) and (min-width: 500px){
+  .UserDetails,
+  .UserDetails.HiddenDetails {
+    overflow: scroll;
+    padding: 0.5em 0.7em 4em;
+  }
+}
+
+@media screen and (max-height: 520px) and (max-width: 500){
+  .UserInfo p {
+    margin: 0.2em 0;
+  }
+
+  .UserInfo {
+    padding-top: 52vw;
+  }
+
+  .ProfileImage {
+    width: 50vw;
+    padding-bottom: 50vw;
+    margin: 0.2em auto;
+    bottom: calc(100vh - (50vw + 1em));
+  }
+
+  .IconLink {
+    margin: 0.2em 0.5em;
+  }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .RotateDevice {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: #113d34;
+    z-index: 1000;
+    color: rgb(200, 200, 200);
+  }
+
+  .UserDetails {
+    height: 100vw;
+  }
+
+  .RotateDevice img {
+    height: 70vh;
+  }
+  
+  .RotateDevice p {
+    font-size: 1.5em;
+    font-weight: bold;
   }
 }
