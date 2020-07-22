@@ -193,12 +193,13 @@ body {
   background: white;
   overflow: scroll;
   box-sizing: border-box;
-  padding: 0.5em 0.7em;
+  padding: 0.5em 0.7em 1.2em;
   margin-top: 2.5em;
-  height: calc(100vh - 6.7em);
   position: fixed;
   left: 0;
   top: 0;
+  right: 0;
+  bottom: 5em;
   transform: translateX(110vw);
   transition: transform 0.4s linear;
 }
