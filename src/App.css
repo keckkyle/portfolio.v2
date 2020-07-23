@@ -273,22 +273,25 @@ body {
   }
 }
 
+@media screen and (min-height: 900px) {
+  .UserInfo {
+    justify-content: space-around;
+    padding: 1em 0.7em 35vh;
+  }
+}
+
 @media screen and (min-width: 675px) {
-  .UserDetails, .NavBar {
+  .NavBar {
     width: 280px;
     max-width: 280px;
   }
 
-  .UserDetails.HiddenDetails {
-    background: #113d34;
-    top: 0;
-    bottom: 0;
-    height: auto;
-    padding: 0.5em 0.7em;
+  .UserInfo {
+    width: 280px;
   }
 
-  .HiddenDetails .ContactTypes,
   .HiddenDetails .UserInfo {
+    transform: translateY(0);
     opacity: 1;
   }
 
@@ -296,7 +299,10 @@ body {
   .HiddenDetails .ProfileImage {
     width: 200px;
     padding-bottom: 200px;
-    border: none;
+  }
+
+  .nav-image-item {
+    display: none;
   }
 
   .Page {
