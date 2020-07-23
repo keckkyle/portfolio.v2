@@ -273,6 +273,12 @@ body {
   }
 }
 
+@media screen and (max-height: 450px) {
+  .UserInfo p{
+    display: none;
+  }
+}
+
 @media screen and (min-height: 900px) {
   .UserInfo {
     justify-content: space-around;
@@ -419,7 +425,7 @@ body {
   }
 
   .RotateDevice img {
-    height: 60vh;
+    height: 60%;
   }
   
   .RotateDevice p {
