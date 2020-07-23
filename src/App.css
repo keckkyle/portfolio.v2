@@ -414,6 +414,7 @@ body {
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .RotateDevice {
+    overflow: hidden;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -429,11 +430,11 @@ body {
   }
 
   .RotateDevice img {
-    height: 60%;
+    height: 50%;
   }
   
   .RotateDevice p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
   }
 }
