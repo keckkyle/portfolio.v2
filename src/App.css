@@ -1,11 +1,12 @@
 /* background-color: #113d34; */
-.App {
+/* .App {
   background: #113d34;
-}
+} */
 
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   overflow: hidden;
+  background: #113d34;
 }
 
 .RotateDevice {
@@ -242,6 +243,9 @@ body {
   background: transparent;
   border: none;
   padding: 0;
+  font-size: 0.9em;
+  align-self: stretch;
+  font-weight: bold;
 }
 
 .project-title.open{
