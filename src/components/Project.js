@@ -15,6 +15,7 @@ class Project extends React.Component {
     render(){
         const { handleClick, displayRef, titleRef } = this;
         const { title, image, children } = this.props;
+        const imageURL = `https://s3.amazonaws.com/keckkyle.com.images/${image}`
         return(
             <div className="Project">
                 <div onClick={handleClick} className="project-link">
@@ -22,7 +23,7 @@ class Project extends React.Component {
                     <p>➤</p>
                 </div>
                 <div ref={displayRef} className="project-details">
-                    <img src={image} alt={title}/>
+                    <img src={imageURL} alt={title}/>
                     <p>{children}</p>
                 </div>
                 <div ref={titleRef} className="project-title">
