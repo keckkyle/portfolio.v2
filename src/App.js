@@ -69,7 +69,6 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" />
           <Route exact path="/about" component={About} />
-          {/* <Route exact path="/projects" component={Projects} /> */}
           <Route exact path="/projects" render={props => <Projects {...props} projects={projects} /> } />
         </Switch>
         <Details 
