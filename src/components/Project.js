@@ -1,6 +1,7 @@
 import React from 'react'
 
 class Project extends React.Component {
+
     displayRef = React.createRef()
     titleRef = React.createRef()
 

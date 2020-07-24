@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Details from './components/UserDetails';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -12,12 +13,23 @@ class App extends React.Component {
     smallScreen: false,
     displayDetails: true,
     image: "https://scontent.fdet1-1.fna.fbcdn.net/v/t1.0-9/10968522_10106215452395394_3788513541001142363_n.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=JQ55jONBomIAX_5KYSn&_nc_ht=scontent.fdet1-1.fna&oh=da48689714812dc82424bcd7f84aac24&oe=5F323F37",
-    currentView: window.location.pathname
+    currentView: window.location.pathname,
+    projects: []
   }
 
   componentDidMount = () => {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth)
+    axios.get('/projects')
+    .then(result => {
+      const projectList = result.data.body
+      this.setState({
+          projects: projectList.sort((a, b) => (a.id < b.id) ? 1: -1),
+      })
+    })
+    .catch(error => {
+      console.log('Error: ', error)
+    })
   }
 
   updateWidth = () => {
@@ -51,13 +63,14 @@ class App extends React.Component {
   }
 
   render(){
-    const { smallScreen, displayDetails, image } = this.state
+    const { smallScreen, displayDetails, image, projects } = this.state
     return (
       <div className="App">
         <Switch>
           <Route exact path="/" />
           <Route exact path="/about" component={About} />
-          <Route exact path="/projects" component={Projects} />
+          {/* <Route exact path="/projects" component={Projects} /> */}
+          <Route exact path="/projects" render={props => <Projects {...props} projects={projects} /> } />
         </Switch>
         <Details 
           smallScreen = {smallScreen}
