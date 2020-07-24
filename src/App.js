@@ -20,7 +20,7 @@ class App extends React.Component {
   componentDidMount = () => {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth)
-    axios.get('/projects')
+    axios.get('https://1eovf4zr73.execute-api.us-east-1.amazonaws.com/production/projects')
     .then(result => {
       const projectList = result.data.body
       this.setState({
