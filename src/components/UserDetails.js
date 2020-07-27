@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons'
 
-const linkedin = <FontAwesomeIcon icon={faLinkedin} />
-const github = <FontAwesomeIcon icon={faGithub} />
-const mail = <FontAwesomeIcon icon={faEnvelope} />
-const file = <FontAwesomeIcon icon={faFile} />
+const linkedin = <FontAwesomeIcon icon={faLinkedin} title="LinkedIn"/>
+const github = <FontAwesomeIcon icon={faGithub} title="GitHub"/>
+const mail = <FontAwesomeIcon icon={faEnvelope} title="email"/>
+const file = <FontAwesomeIcon icon={faFile} title="file"/>
 
 const UserDetails = (props) => {
     let classes = ""

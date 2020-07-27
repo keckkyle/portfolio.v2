@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Details from './components/UserDetails';
+import Home from './pages/Home'
 import About from './pages/About';
 import Projects from './pages/Projects';
 import { Route, Switch} from 'react-router-dom';
@@ -67,7 +68,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" />
+          <Route exact path="/" component={Home}/>
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" render={props => <Projects {...props} projects={projects} /> } />
         </Switch>

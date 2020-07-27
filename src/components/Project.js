@@ -18,7 +18,7 @@ class Project extends React.Component {
         return(
             <div className="Project">
                 <div onClick={handleClick} className="project-link">
-                    <h4>{title}</h4>
+                    <p className="title">{title}</p>
                     <p>➤</p>
                 </div>
                 <div ref={displayRef} className="project-details">

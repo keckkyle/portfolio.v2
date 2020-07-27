@@ -21,6 +21,7 @@ const NavBar = (props) => {
             </NavItem>
             <div className="nav-image-item">
                 <Link to="/">
+                    <p className="hidden-text">profile</p>
                     <div style={image} className="nav-image"></div>
                 </Link>
             </div>

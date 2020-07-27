@@ -9,6 +9,33 @@ body {
   background: #113d34;
 }
 
+.opaque-background {
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255,0.6);
+  box-shadow: inset 0 0 10px black;
+}
+
+.Background-Image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project-link .title {
+  font-size: 1em;
+  font-weight: bold;
+  color: #113d34;
+}
+
+.hidden-text{
+  position: fixed;
+  top: -100vh;
+  opacity: 0;
+}
+
 .RotateDevice {
   display: none;
 }
@@ -291,6 +318,14 @@ body {
 }
 
 @media screen and (min-width: 675px) {
+  .opaque-background {
+    width: calc(100% - 280px);
+  }
+
+  .Background-Image {
+    margin-left: 280px;
+  }
+
   .NavBar {
     width: 280px;
     max-width: 280px;
