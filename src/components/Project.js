@@ -14,16 +14,24 @@ class Project extends React.Component {
 
     render(){
         const { handleClick, displayRef, titleRef } = this;
-        const { title, image, children } = this.props;
+        const { project } = this.props
+        const { title, image, technologies, purpose, details, link} = project;
         return(
             <div className="Project">
                 <div onClick={handleClick} className="project-link">
                     <p className="title">{title}</p>
-                    <p>➤</p>
+                    <p className="arrow">➤</p>
                 </div>
                 <div ref={displayRef} className="project-details">
-                    <img src={image} alt={title}/>
-                    <p>{children}</p>
+                    <div className="project-brief">
+                        { project['image'] === "https://s3.amazonaws.com/keckkyle.com.images/undefined" ? <></> : <img src={image} alt={title}/>}
+                        <div>
+                            <p>{purpose}</p>
+                            <p>Technologies: {technologies}</p>
+                            { !link ? <></>:<p><a href={link} target="_blank" rel="noopener noreferrer"> {link}</a></p> }
+                        </div>
+                    </div>
+                    <p>{details}</p>
                 </div>
                 <div ref={titleRef} className="project-title">
                     <button  onClick={handleClick}>⬅︎ back</button>
