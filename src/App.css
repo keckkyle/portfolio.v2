@@ -1,12 +1,9 @@
-/* background-color: #113d34; */
-/* .App {
-  background: #113d34;
-} */
+/* background-color: #004650; */
 
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   overflow: hidden;
-  background: #113d34;
+  background: #004650;
 }
 
 .opaque-background {
@@ -27,7 +24,7 @@ body {
 .project-link .title {
   font-size: 1em;
   font-weight: bold;
-  color: #113d34;
+  color: #004650;
 }
 
 .hidden-text{
@@ -95,7 +92,7 @@ body {
   bottom: 5em;
   box-sizing: border-box;
   padding: 0.5em 0.7em;
-  background: #113d34;
+  background: #004650;
   text-align: center;
   color: rgb(200, 200, 200);
   transition: all 0.35s linear;
@@ -198,7 +195,7 @@ body {
 }
 
 .Project {
-  border-bottom: 1px solid #113d34;
+  border-bottom: 1px solid #004650;
 }
 
 .Project:last-child {
@@ -210,7 +207,7 @@ body {
   display: block;
   margin: 0 auto;
   border-radius: 0.3em;
-  box-shadow: 0 0 6px 1px #113d34;
+  box-shadow: 0 0 6px 1px #004650;
 }
 
 .Project p {
@@ -233,7 +230,7 @@ body {
 }
 
 .project-details h3 {
-  color: #113d34;
+  color: #004650;
   text-align: center;
   margin: 0;
   padding-bottom: 0.5em;
@@ -289,12 +286,12 @@ body {
 
 .project-link h4 {
   margin: 0;
-  color: #113d34;
+  color: #004650;
 }
 
 .project-link p {
   font-size: 0.7em;
-  color: #113d3445;
+  color: #00465045;
 }
 
 @media screen and (min-width: 500px) {
@@ -459,7 +456,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background: #113d34;
+    background: #004650;
     z-index: 1000;
     color: rgb(200, 200, 200);
   }
