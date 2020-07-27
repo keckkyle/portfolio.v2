@@ -479,3 +479,39 @@ body {
     font-weight: bold;
   }
 }
+
+.About-enter {
+  transform: translateX(-100vw);
+}
+
+.About-enter-active {
+  transform: translateX(0);
+  transition: transform 400ms;
+}
+
+.About-exit {
+  transform: translateX(0);
+}
+
+.About-exit-active {
+  transform: translateX(-100vw);
+  transition: transform 400ms;
+}
+
+.Projects-enter {
+  transform: translateX(100vw);
+}
+
+.Projects-enter-active {
+  transform: translateX(0);
+  transition: transform 400ms;
+}
+
+.Projects-exit {
+  transform: translateX(0);
+}
+
+.Projects-exit-active {
+  transform: translateX(100vw);
+  transition: transform 400ms;
+}

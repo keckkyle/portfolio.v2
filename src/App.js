@@ -5,9 +5,12 @@ import Home from './pages/Home'
 import About from './pages/About';
 import Projects from './pages/Projects';
 import { Route, Switch} from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import { MobileView } from 'react-device-detect'
 import './App.css';
 import rotate from './images/rotate.png';
+
+import Test from './pages/Test'
 
 class App extends React.Component {
   state = {
@@ -67,11 +70,37 @@ class App extends React.Component {
     const { smallScreen, displayDetails, image, projects } = this.state
     return (
       <div className="App">
+        <Home/>
+        <Route path="/about" exact>
+            {({match}) => (
+              <CSSTransition
+                in={match != null}
+                timeout = {400}
+                classNames = 'About'
+                unmountOnExit
+              >
+                  <About />
+              </CSSTransition>
+            )}
+        </Route>
+        <Route path="/projects" exact>
+            {({match}) => (
+              <CSSTransition
+                in={match != null}
+                timeout = {400}
+                classNames = 'Projects'
+                unmountOnExit
+              >
+                  <Projects projects={projects}/>
+              </CSSTransition>
+            )}
+        </Route>
+        {/* 
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" render={props => <Projects {...props} projects={projects} /> } />
-        </Switch>
+        </Switch> */}
         <Details 
           smallScreen = {smallScreen}
           show={displayDetails}
