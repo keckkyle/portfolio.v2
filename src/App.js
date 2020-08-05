@@ -4,13 +4,12 @@ import Details from './components/UserDetails';
 import Home from './pages/Home'
 import About from './pages/About';
 import Projects from './pages/Projects';
-import { Route, Switch} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { MobileView } from 'react-device-detect'
+import { MobileView } from 'react-device-detect';
 import './App.css';
 import rotate from './images/rotate.png';
 
-import Test from './pages/Test'
 
 class App extends React.Component {
   state = {
@@ -95,12 +94,6 @@ class App extends React.Component {
               </CSSTransition>
             )}
         </Route>
-        {/* 
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/about" component={About} />
-          <Route exact path="/projects" render={props => <Projects {...props} projects={projects} /> } />
-        </Switch> */}
         <Details 
           smallScreen = {smallScreen}
           show={displayDetails}

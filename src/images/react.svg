@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 118 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="React" transform="matrix(0.47154,0,0,0.47154,-143.055,-56.0557)">
+        <g transform="matrix(0.474057,0.82109,-0.967911,0.558824,468.016,-241.909)">
+            <ellipse cx="423" cy="248" rx="106" ry="34" style="fill:none;stroke:rgb(77,193,224);stroke-width:8.19px;"/>
+        </g>
+        <g transform="matrix(1.17241,0,0,1.17241,-72.7069,-46.1724)">
+            <circle cx="427.5" cy="247.5" r="14.5" style="fill:none;stroke:rgb(77,193,224);stroke-width:7.24px;"/>
+        </g>
+        <g transform="matrix(0.948113,0,0,1.11765,27.4481,-33.1765)">
+            <ellipse cx="423" cy="248" rx="106" ry="34" style="fill:none;stroke:rgb(77,193,224);stroke-width:8.19px;"/>
+        </g>
+        <g transform="matrix(0.474057,-0.82109,0.967911,0.558824,-12.0678,452.733)">
+            <ellipse cx="423" cy="248" rx="106" ry="34" style="fill:none;stroke:rgb(77,193,224);stroke-width:8.19px;"/>
+        </g>
+    </g>
+</svg>
