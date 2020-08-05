@@ -34,7 +34,7 @@ class Project extends React.Component {
                     <p>{details}</p>
                 </div>
                 <div ref={titleRef} className="project-title">
-                    <button  onClick={handleClick}>⬅︎ back</button>
+                    <button  onClick={handleClick}>❮ back</button>
                     <h4>{title}</h4>
                 </div>
             </div>
