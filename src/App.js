@@ -69,7 +69,7 @@ class App extends React.Component {
     const { smallScreen, displayDetails, image, projects } = this.state
     return (
       <div className="App">
-        <Home/>
+        <Home project={projects[0]}/>
         <Route path="/about" exact>
             {({match}) => (
               <CSSTransition
