@@ -57,8 +57,21 @@ body {
   text-align: center;
 }
 
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5em 0;
+}
+
 .tech-logo {
   height: 50px;
+  margin: 0.25em;
+}
+
+.about-img {
+  height: 60px;
+  margin: 0.2em;
 }
 
 .proj {

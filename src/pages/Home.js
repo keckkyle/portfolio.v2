@@ -10,6 +10,12 @@ import java from '../images/java.svg';
 import swift from '../images/swift.svg';
 import sqlite from '../images/sqlite.svg';
 import postgresql from '../images/postgresql.svg';
+import spartan from '../images/spartan.svg';
+import michigan from '../images/michigan.svg';
+import travel from '../images/travel.svg';
+import teacher from '../images/teacher.svg';
+import petronas from '../images/petronas.svg';
+
 
 const style = {
     textDecoration: "none",
@@ -18,6 +24,8 @@ const style = {
 }
 
 const Home = (props) => {
+    const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];
+    const about = [michigan, travel, spartan, teacher, petronas];
     const background={
         backgroundImage: "url(https://s3.amazonaws.com/keckkyle.com.images/walk.jpeg)"
     }
@@ -32,16 +40,17 @@ const Home = (props) => {
                     <div className="content">
                         <section>
                             <h3>Skills</h3>
-                            <img className="tech-logo" src={html} alt="Technology logo"/>
-                            <img className="tech-logo" src={css} alt="Technology logo"/>
-                            <img className="tech-logo" src={logoReact} alt="Technology logo"/>
-                            <img className="tech-logo" src={js} alt="Technology logo"/>
-                            <img className="tech-logo" src={python} alt="Technology logo"/>
-                            <img className="tech-logo" src={java} alt="Technology logo"/>
-                            <img className="tech-logo" src={swift} alt="Technology logo"/>   
-                            <img className="tech-logo" src={sqlite} alt="Technology logo"/>
-                            <img className="tech-logo" src={postgresql} alt="Technology logo"/>
-                            <img className="tech-logo" src={github} alt="Technology logo"/>
+                            <div className="images">
+                                {technologies.map(item => 
+                                    <img key={item} className="tech-logo" src={item} alt="technology logo"/>
+                                )}
+                            </div>
+                            <h3>About Me</h3>
+                            <div className="images">
+                                {about.map(item => 
+                                    <img key={item} className="about-img" src={item} alt={item}/>
+                                )}
+                            </div>
                         </section>
                         <section>
                             <h3>Projects</h3>
