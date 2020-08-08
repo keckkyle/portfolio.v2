@@ -17,22 +17,31 @@ import teacher from '../images/teacher.svg';
 import petronas from '../images/petronas.svg';
 
 
-const style = {
+const moreStyle = {
+    display: "block",
     textDecoration: "none",
     fontWeight: 700,
-    color: "#004650"
+    color: "#004650",
+    padding: "0.5em 0"
+}
+const readStyle = {
+    textAlign: "center",
+    display: "block",
+    textDecoration: "none",
+    fontWeight: 700,
+    color: "#004650",
+    padding: "0.5em 0" 
+}
+const padding = {
+    padding: "0"
+}
+const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];
+const about = [michigan, travel, spartan, teacher, petronas];
+const background = {
+    backgroundImage: "url(https://s3.amazonaws.com/keckkyle.com.images/walk.jpeg)"
 }
 
 const Home = (props) => {
-    const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];
-    const about = [michigan, travel, spartan, teacher, petronas];
-    const background={
-        backgroundImage: "url(https://s3.amazonaws.com/keckkyle.com.images/walk.jpeg)"
-    }
-    const padding = {
-        padding: "0"
-    }
-
     return(
         <div style={padding} className="Page">
             <div style={background} className="Background-Image">
@@ -51,6 +60,7 @@ const Home = (props) => {
                                     <img key={item} className="about-img" src={item} alt={item}/>
                                 )}
                             </div>
+                            <Link to="/about" style={readStyle}>Read about me</Link>
                         </section>
                         <section>
                             <h3>Projects</h3>
@@ -66,12 +76,12 @@ const Home = (props) => {
                                         <h4>{props.project.title}</h4>
                                         <p>Technologies: {props.project.technologies}</p>
                                     </div>
-                                    <p><Link to="/projects" style={style}>View more</Link></p>
+                                    <Link to="/projects" style={moreStyle}>View more</Link>
                                 </div>
                             }
                         </section>
                         <section>
-                            <p>This site is built using React.js and deployed with AWS Amplify. Photos are stored in AWS S3, and project information is pulled from AWS DynamoDB using AWS APIGateway and Lambda. </p>
+                            <p>This site is built using React.js and deployed with AWS Amplify. Photos are stored in AWS S3, and project information is pulled from AWS DynamoDB using Lambda and AWS APIGateway. </p>
                         </section>
                     </div>
                 </div>

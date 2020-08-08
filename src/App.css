@@ -76,8 +76,8 @@ body {
 
 .proj {
   border-bottom: 1px solid #004650;
-  margin-bottom: 0.25em;
-  padding-bottom: 0.25em;
+  margin: 0.25em 0;
+  padding: 0.25em 0;
 }
 
 .proj h4 {
@@ -501,10 +501,6 @@ body {
 
 @media screen and (max-height: 510px){
   @media (max-width: 499px) {
-  .UserInfo p {
-    /* margin: 0; */
-  }
-
   .ProfileImage {
     width: 50vw;
     padding-bottom: 50vw;
