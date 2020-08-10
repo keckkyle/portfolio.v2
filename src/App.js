@@ -15,7 +15,7 @@ class App extends React.Component {
   state = {
     smallScreen: false,
     displayDetails: true,
-    image: "https://scontent.fdet1-1.fna.fbcdn.net/v/t1.0-9/10968522_10106215452395394_3788513541001142363_n.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=JQ55jONBomIAX_5KYSn&_nc_ht=scontent.fdet1-1.fna&oh=da48689714812dc82424bcd7f84aac24&oe=5F323F37",
+    image: "https://s3.amazonaws.com/keckkyle.com.images/portrait.jpg",
     currentView: window.location.pathname,
     projects: []
   }
@@ -56,6 +56,7 @@ class App extends React.Component {
 
   render(){
     const { smallScreen, displayDetails, image, projects } = this.state
+    const projectPreview = projects.slice(0,2)
     return (
       <div className="App">
         <div className="Background-Image">
@@ -69,7 +70,7 @@ class App extends React.Component {
                   unmountOnExit
                   onEnter={() => this.setDetails("")}
                 >
-                  <Home project={projects[0]}/>
+                  <Home projects={projectPreview}/>
                 </CSSTransition>
               )}
             </Route>

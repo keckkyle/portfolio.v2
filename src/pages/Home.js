@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+
+
 import github from '../images/github.svg';
 import html from '../images/html.svg';
 import css from '../images/css.svg';
@@ -32,15 +34,13 @@ const readStyle = {
     color: "#004650",
     padding: "0.5em 0" 
 }
-const padding = {
-    padding: "0"
-}
+
 const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];
 const about = [michigan, travel, spartan, teacher, petronas];
 
 const Home = (props) => {
     return(
-        <div style={padding} className="Home">
+        <div className="Home">
             <div className="content">
                 <section>
                     <h3>Skills</h3>
@@ -59,18 +59,16 @@ const Home = (props) => {
                 </section>
                 <section>
                     <h3>Projects</h3>
-                    {props.project === undefined ? 
+                    {props.projects.length === 0 ? 
                         <p>Loading...</p> 
                     :
                         <div className="proj-preview">
-                            <div className="proj">
-                                <h4>{props.project.title}</h4>
-                                <p>Technologies: {props.project.technologies}</p>
-                            </div>
-                            <div className="proj">
-                                <h4>{props.project.title}</h4>
-                                <p>Technologies: {props.project.technologies}</p>
-                            </div>
+                            {props.projects.map(item =>
+                                <div className="proj">
+                                    <h4>{item.title}</h4>
+                                    <p>Technologies: {item.technologies}</p>
+                                </div>
+                            )}
                             <Link to="/projects" style={moreStyle}>View more</Link>
                         </div>
                     }
