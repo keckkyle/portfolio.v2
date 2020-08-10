@@ -39,66 +39,75 @@ class App extends React.Component {
     this.setState({
       smallScreen: window.innerWidth < 675 ? true : false
     })
-    this.setDetails()
   }
   
-  setDetails = () => {
+  setDetails = (path) => {
     this.setState({
-      currentView: window.location.pathname,
+      currentView: `/${path}`,
+      displayDetails: false,
     })
   }
 
-  setDisplay = () => {
-    let view = this.state.currentView
-    let boolean = true
-    if(view !== "/") {
-      boolean = false
-    }
+  toggleDisplay = () => {
     this.setState({
-      displayDetails: boolean,
+      displayDetails: !this.state.displayDetails,
     })
-  }
-
-  componentDidUpdate = (prevProp, prevState) => {
-    if(prevState.currentView !== this.state.currentView){
-      this.setDisplay()
-    }
   }
 
   render(){
     const { smallScreen, displayDetails, image, projects } = this.state
     return (
       <div className="App">
-        <Home project={projects[0]}/>
-        <Route path="/about" exact>
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout = {400}
-                classNames = 'About'
-                unmountOnExit
-              >
-                  <About />
-              </CSSTransition>
-            )}
-        </Route>
-        <Route path="/projects" exact>
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout = {400}
-                classNames = 'Projects'
-                unmountOnExit
-              >
-                  <Projects projects={projects}/>
-              </CSSTransition>
-            )}
-        </Route>
+        <div className="Background-Image">
+          <div className="opaque-background">
+            <Route path="/" exact>
+              {({match}) => (
+                <CSSTransition
+                  in={match != null}
+                  timeout = {400}
+                  classNames = 'Home'
+                  unmountOnExit
+                  onEnter={() => this.setDetails("")}
+                >
+                  <Home project={projects[0]}/>
+                </CSSTransition>
+              )}
+            </Route>
+            <Route path="/about" exact>
+                {({match}) => (
+                  <CSSTransition
+                    in={match != null}
+                    timeout = {400}
+                    classNames = 'About'
+                    unmountOnExit
+                    onEnter={() => this.setDetails("about")}
+                  >
+                      <About />
+                  </CSSTransition>
+                )}
+            </Route>
+            <Route path="/projects" exact>
+                {({match}) => (
+                  <CSSTransition
+                    in={match != null}
+                    timeout = {400}
+                    classNames = 'Projects'
+                    unmountOnExit
+                    onEnter={() => this.setDetails("projects")}
+                  >
+                      <Projects projects={projects}/>
+                  </CSSTransition>
+                )}
+            </Route>
+          </div>
+        </div>
         <Details 
           smallScreen = {smallScreen}
           show={displayDetails}
           image={image} 
           setDetails={this.setDetails}
+          current = {this.state.currentView}
+          toggleDisplay = {this.toggleDisplay}
         />
         <MobileView>
           <div className="RotateDevice">

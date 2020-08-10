@@ -6,6 +6,16 @@ body {
   background: #004650;
 }
 
+.close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0.35em 0.6em;
+  font-size: 1.5em;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
 .About ul {
   display: flex;
   justify-content: center;
@@ -35,13 +45,18 @@ body {
   box-shadow: inset 0 0 10px 1px black;
 }
 
-.content {
+.Home {
   height: 100%;
   width: 100%;
   overflow: scroll;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding-bottom: 1.2em;
+  min-height: 100%;
 }
 
 .content section {
@@ -65,12 +80,12 @@ body {
 }
 
 .tech-logo {
-  height: 50px;
+  height: 40px;
   margin: 0.25em;
 }
 
 .about-img {
-  height: 60px;
+  height: 45px;
   margin: 0.2em;
 }
 
@@ -86,8 +101,12 @@ body {
 }
 
 .Background-Image {
-  height: 100%;
-  width: 100%;
+  background-image: url(https://s3.amazonaws.com/keckkyle.com.images/walk.jpeg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 5em;
+  right: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -389,8 +408,22 @@ body {
 }
 
 @media screen and (min-width: 675px) {
-  .opaque-background {
-    width: calc(100% - 280px);
+  .Background-Image {
+    bottom: 0;
+  }
+
+  .tech-logo {
+    height: 50px;
+    margin: 0.25em;
+  }
+
+  .about-img {
+    height: 60px;
+    margin: 0.2em;
+  }
+
+  .close {
+    display: none;
   }
 
   .Background-Image {
@@ -582,4 +615,28 @@ body {
 .Projects-exit-active {
   transform: translateX(100vw);
   transition: transform 400ms;
+}
+
+.Home-enter {
+  transform: scale(0.75);
+  opacity: 0;
+  transform-origin: bottom;
+}
+
+.Home-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 400ms;
+}
+
+.Home-exit {
+  transform: scale(1);
+  opacity: 1;
+  transform-origin: bottom;
+}
+
+.Home-exit-active {
+  transform: scale(0.75);
+  opacity: 0;
+  transition: all 400ms;
 }

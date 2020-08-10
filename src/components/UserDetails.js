@@ -22,6 +22,9 @@ const UserDetails = (props) => {
     return(
         <div className={classes}>
             <div className="UserInfo">
+                <div className="close" onClick={props.toggleDisplay}>
+                    ×
+                </div>
                 <Image img={props.image}/>
                 <div className="UserText">
                     <h1>Kyle Andrew Keck</h1>
@@ -47,7 +50,12 @@ const UserDetails = (props) => {
                 />
                 </div>
             </div>
-            <NavBar setDetails={props.setDetails} image={props.image}/>
+            <NavBar 
+              setDetails={props.setDetails} 
+              image={props.image} 
+              current={props.current}
+              toggle = {props.toggleDisplay}
+            />
         </div>
     )
 }

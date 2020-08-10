@@ -37,54 +37,47 @@ const padding = {
 }
 const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];
 const about = [michigan, travel, spartan, teacher, petronas];
-const background = {
-    backgroundImage: "url(https://s3.amazonaws.com/keckkyle.com.images/walk.jpeg)"
-}
 
 const Home = (props) => {
     return(
-        <div style={padding} className="Page">
-            <div style={background} className="Background-Image">
-                <div className="opaque-background">
-                    <div className="content">
-                        <section>
-                            <h3>Skills</h3>
-                            <div className="images">
-                                {technologies.map(item => 
-                                    <img key={item} className="tech-logo" src={item} alt="technology logo"/>
-                                )}
-                            </div>
-                            <h3>About Me</h3>
-                            <div className="images">
-                                {about.map(item => 
-                                    <img key={item} className="about-img" src={item} alt={item}/>
-                                )}
-                            </div>
-                            <Link to="/about" style={readStyle}>Read about me</Link>
-                        </section>
-                        <section>
-                            <h3>Projects</h3>
-                            {props.project === undefined ? 
-                                <p>Loading...</p> 
-                            :
-                                <div className="proj-preview">
-                                    <div className="proj">
-                                        <h4>{props.project.title}</h4>
-                                        <p>Technologies: {props.project.technologies}</p>
-                                    </div>
-                                    <div className="proj">
-                                        <h4>{props.project.title}</h4>
-                                        <p>Technologies: {props.project.technologies}</p>
-                                    </div>
-                                    <Link to="/projects" style={moreStyle}>View more</Link>
-                                </div>
-                            }
-                        </section>
-                        <section>
-                            <p>This site is built using React.js and deployed with AWS Amplify. Photos are stored in AWS S3, and project information is pulled from AWS DynamoDB using Lambda and AWS APIGateway. </p>
-                        </section>
+        <div style={padding} className="Home">
+            <div className="content">
+                <section>
+                    <h3>Skills</h3>
+                    <div className="images">
+                        {technologies.map(item => 
+                            <img key={item} className="tech-logo" src={item} alt="technology logo"/>
+                        )}
                     </div>
-                </div>
+                    <h3>About Me</h3>
+                    <div className="images">
+                        {about.map(item => 
+                            <img key={item} className="about-img" src={item} alt={item}/>
+                        )}
+                    </div>
+                    <Link to="/about" style={readStyle}>Read about me</Link>
+                </section>
+                <section>
+                    <h3>Projects</h3>
+                    {props.project === undefined ? 
+                        <p>Loading...</p> 
+                    :
+                        <div className="proj-preview">
+                            <div className="proj">
+                                <h4>{props.project.title}</h4>
+                                <p>Technologies: {props.project.technologies}</p>
+                            </div>
+                            <div className="proj">
+                                <h4>{props.project.title}</h4>
+                                <p>Technologies: {props.project.technologies}</p>
+                            </div>
+                            <Link to="/projects" style={moreStyle}>View more</Link>
+                        </div>
+                    }
+                </section>
+                <section>
+                    <p>This site is built using React.js and deployed with AWS Amplify. Photos are stored in AWS S3, and project information is pulled from AWS DynamoDB using Lambda and AWS APIGateway. </p>
+                </section>
             </div>
         </div>
     )
