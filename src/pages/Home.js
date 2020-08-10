@@ -64,7 +64,7 @@ const Home = (props) => {
                     :
                         <div className="proj-preview">
                             {props.projects.map(item =>
-                                <div className="proj">
+                                <div className="proj" key={item.title}>
                                     <h4>{item.title}</h4>
                                     <p>Technologies: {item.technologies}</p>
                                 </div>
