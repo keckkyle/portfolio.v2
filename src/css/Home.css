@@ -1,0 +1,54 @@
+.home {
+    height: 100%;
+    overflow: scroll;
+}
+
+.content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 1em;
+    min-height: 100%;
+}
+
+.content section {
+    background: rgba(255,255,255,0.8);
+    border-radius: 0.3em;
+    margin: 1.25em;
+    padding: 0.5em;
+    box-shadow: 0 0 10px black;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0.5em 0;
+}
+
+.tech-logo {
+    height: 40px;
+    margin: 0.25em;
+}
+
+.about-img {
+    height: 45px;
+    margin: 0.2em;
+}
+
+.proj {
+    border-bottom: 1px solid #004650;
+    margin: 0.25em 0;
+    padding: 0.25em 0;
+}
+
+@media screen and (min-width: 675px) { 
+    .tech-logo {
+        height: 50px;
+    }
+
+    .about-img {
+        height: 60px;
+    }
+}

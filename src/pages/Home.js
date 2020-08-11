@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import '../css/Home.css'
 
 
 import github from '../images/github.svg';
@@ -40,7 +41,7 @@ const about = [michigan, travel, spartan, teacher, petronas];
 
 const Home = (props) => {
     return(
-        <div className="Home">
+        <div className="home">
             <div className="content">
                 <section>
                     <h3>Skills</h3>
@@ -62,7 +63,7 @@ const Home = (props) => {
                     {props.projects.length === 0 ? 
                         <p>Loading...</p> 
                     :
-                        <div className="proj-preview">
+                        <div>
                             {props.projects.map(item =>
                                 <div className="proj" key={item.title}>
                                     <h4>{item.title}</h4>

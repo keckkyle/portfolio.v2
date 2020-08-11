@@ -1,0 +1,167 @@
+.Project {
+    border-bottom: 1px solid #004650;
+}
+
+.Project:last-child {
+    border-bottom: none;
+}
+
+.Project img {
+    width: 85%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    border: solid rgb(220,220,220) 0.05em;
+}
+
+.project-link {
+    color: #004650;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0;
+  }
+
+.text {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.arrow {
+    opacity: 0.35;
+}
+
+.details {
+    z-index: 10;
+    background: white;
+    overflow: scroll;
+    box-sizing: border-box;
+    padding: 0.5em 0.7em 1.2em;
+    margin-top: 2.5em;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 5em;
+    transform: translateX(110vw);
+    transition: transform 0.4s linear;
+}
+  
+.details.open {
+    transform: translateX(0)
+}
+
+.project-title {
+    display: flex;
+    align-items: center;
+    padding: 0.2em 0.4em;
+    height: 2.5em;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform-origin: center;
+    transform: translate(110vw, 0);
+    transition: transform 0.4s linear;
+    background: rgb(200, 200, 200);
+  }
+  
+  .project-title h4 {
+    color: black;
+    margin-left: 1em;
+    font-weight: 300;
+  }
+  
+  .project-title button {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    outline: none;
+    background: transparent;
+    border: none;
+    font-size: 0.9em;
+    align-self: stretch;
+    font-weight: bold;
+  }
+  
+  .project-title.open{
+    transform: translate(0,0)
+  }
+
+
+@media screen and (min-width: 675px) {
+    .details {
+        height: calc(100vh - 2.7em) ;
+    }
+
+    .details,
+    .project-title {
+        width: calc(100vw - 280px);
+    }
+
+    .project-title.open,
+    .details.open {
+        transform: translate(280px,0)
+    }
+
+    .details img {
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .Projects {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Projects .details {
+        position: static;
+        transform: translateX(0);
+        width: auto;
+        margin-top: 0;
+        padding: 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-link {
+        display: none;
+    }
+
+    .project-brief {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .details img {
+        margin: 0.6em;
+        width: 150px;
+    }
+    
+    .project-title,
+    .project-title.open {
+        justify-content: center;
+        background: transparent;
+        transform: translate(0,0);
+        position: static;
+        width: auto;
+        height: auto;
+        padding-top: 1em;
+    }
+
+    .project-title h4 {
+        margin-left: 0;
+        color: #004650;
+    }
+
+    .project-title button {
+        display: none;
+    }
+}

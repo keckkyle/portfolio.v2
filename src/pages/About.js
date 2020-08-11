@@ -1,4 +1,6 @@
 import React from 'react';
+import '../css/About.css';
+
 import github from '../images/github.svg';
 import html from '../images/html.svg';
 import css from '../images/css.svg';
@@ -12,9 +14,9 @@ import postgresql from '../images/postgresql.svg';
 
 const About = (props) => (
     <div className="Page">
-        <div className="About">
+        <div className="about">
             <section>
-                <h2>Skills</h2>
+                <h3>Skills</h3>
                 <ul>
                     <li>
                         <img src={html} alt="Technology logo"/>
@@ -59,7 +61,7 @@ const About = (props) => (
                 </ul>
             </section>
             <section>
-                <h2>My Story</h2>
+                <h3>My Story</h3>
                 <p>
                     I grew up in Michigan in a family who wasn’t content to just sit at home. We took vacations to different parts of the world which made me interested in tourism. This interest led me study it at Michigan State University. While attending MSU, I started running the website for MSU’s Modern Greek Club. I enjoyed spending time on the project up until I graduated with my degree in tourism
                 </p>

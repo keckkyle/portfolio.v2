@@ -19,10 +19,14 @@ class Project extends React.Component {
         return(
             <div className="Project">
                 <div onClick={handleClick} className="project-link">
-                    <p className="title">{title}</p>
+                    <p className="text">{title}</p>
                     <p className="arrow">➤</p>
                 </div>
-                <div ref={displayRef} className="project-details">
+                <div ref={titleRef} className="project-title">
+                    <button  onClick={handleClick}>❮ back</button>
+                    <h4>{title}</h4>
+                </div>
+                <div ref={displayRef} className="details">
                     <div className="project-brief">
                         { project['image'] === "https://s3.amazonaws.com/keckkyle.com.images/undefined" ? <></> : <img src={image} alt={title}/>}
                         <div>
@@ -32,10 +36,6 @@ class Project extends React.Component {
                         </div>
                     </div>
                     <p>{details}</p>
-                </div>
-                <div ref={titleRef} className="project-title">
-                    <button  onClick={handleClick}>❮ back</button>
-                    <h4>{title}</h4>
                 </div>
             </div>
         )
