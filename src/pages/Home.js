@@ -33,7 +33,6 @@ const readStyle = {
     textDecoration: "none",
     fontWeight: 700,
     color: "#004650",
-    padding: "0.5em 0" 
 }
 
 const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];

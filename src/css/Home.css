@@ -24,7 +24,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 0.5em 0;
+    padding: 0.5em 0 1em;
 }
 
 .tech-logo {
@@ -39,8 +39,8 @@
 
 .proj {
     border-bottom: 1px solid #004650;
-    margin: 0.25em 0;
-    padding: 0.25em 0;
+    padding: 0.5em 0;
+    line-height: 1.75;
 }
 
 @media screen and (min-width: 675px) { 
