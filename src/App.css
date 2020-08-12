@@ -42,7 +42,7 @@ p {
   box-shadow: inset 0 0 10px 1px black;
 }
 
-.Background-Image {
+.background-image {
   background-image: url(https://s3.amazonaws.com/keckkyle.com.images/walk.jpeg);
   position: fixed;
   top: 0;
@@ -60,11 +60,11 @@ p {
   opacity: 0;
 }
 
-.RotateDevice {
+.rotate-device {
   display: none;
 }
 
-.Page {
+.page {
   position: fixed;
   top: 0;
   left: 0;
@@ -77,100 +77,45 @@ p {
   padding: 0.5em 0.7em 1.2em;
 }
 
-.Page p {
+.page p {
   padding: 0.5em 0;
 }
 
-.ProfileImage {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 50%;
-  width: 60%;
-  padding-bottom: 60%;
-  box-shadow: inset 0 0 10px 1px black;
-  -moz-box-shadow: inset 0 0 10px 1px black;
-  -webkit-box-shadow: inset 0 0 10px 1px black;
-}
-
-.IconLink, .IconLink:active {
-  font-size: 2em;
-  color: white;
-  margin: 0.5em 0.5em;
-}
-
-.IconLink:hover {
-  color: black;
-}
-
-.page {
-  display: flex;
-}
-
-/* .navImage {
-  position: fixed;
-  top:0;
-  z-index: 0;
-} */
-
-@media screen and (min-width: 500px) {
-  .ProfileImage {
-    width: 250px;
-    padding-bottom: 250px;
-  }
-}
-
 @media screen and (min-width: 675px) {
-  .Background-Image {
+  .background-image {
     bottom: 0;
-  }
-
-  .Background-Image {
     margin-left: 280px;
   }
 
-  .Page {
+  .page {
     padding-left: calc(280px + 0.7em);
     height: 100vh;
   }
 }
 
-
-@media screen and (max-height: 510px){
-  @media (max-width: 499px) {
-  .ProfileImage {
-    width: 50vw;
-    padding-bottom: 50vw;
-  }
-
-  .IconLink {
-    margin: 0.2em 0.5em;
-  }
-}
-}
-
 @media screen and (max-height: 500px) and (orientation: landscape) {
-  .RotateDevice {
+
+  .rotate-device {
     overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    right: 0;
+    bottom: 0;
+    display: block;
     background: #013d61;
     z-index: 1;
     color: rgb(200, 200, 200);
+    text-align: center;
   }
 
-  .RotateDevice img {
+  .rotate-device img {
+    display: block;
     height: 50%;
+    margin: 2em auto;
   }
   
-  .RotateDevice p {
+  .rotate-device p {
     font-size: 1.4em;
     font-weight: bold;
   }

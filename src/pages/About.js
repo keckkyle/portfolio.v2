@@ -13,7 +13,7 @@ import sqlite from '../images/sqlite.svg';
 import postgresql from '../images/postgresql.svg';
 
 const About = (props) => (
-    <div className="Page">
+    <div className="page">
         <div className="about">
             <section>
                 <h3>Skills</h3>

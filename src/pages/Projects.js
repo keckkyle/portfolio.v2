@@ -3,7 +3,7 @@ import Project from '../components/Project'
 import '../css/Projects.css';
 
 const Projects = (props) => (
-    <div className="Page">
+    <div className="page">
         <div className="Projects">
             <h3>Projects</h3>
             {props.projects.map(item =>

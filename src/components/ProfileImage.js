@@ -6,7 +6,7 @@ const ProfileImage = (props) => {
     }
 
     return(
-        <div className="ProfileImage" style={imageStyle}></div>
+        <div className="profile-image" style={imageStyle}></div>
     )
 
 }

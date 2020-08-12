@@ -60,7 +60,7 @@ class App extends React.Component {
     const projectPreview = projects.slice(0,2)
     return (
       <div className="App">
-        <div className="Background-Image">
+        <div className="background-image">
           <div className="opaque-background">
             <Route path="/" exact>
               {({match}) => (
@@ -112,7 +112,7 @@ class App extends React.Component {
           toggleDisplay = {this.toggleDisplay}
         />
         <MobileView>
-          <div className="RotateDevice">
+          <div className="rotate-device">
             <img src={rotate} alt="Rotate device"/>
             <p>Please turn your device</p>
           </div>
