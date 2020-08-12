@@ -60,10 +60,6 @@ p {
   opacity: 0;
 }
 
-.rotate-device {
-  display: none;
-}
-
 .page {
   position: fixed;
   top: 0;
@@ -90,33 +86,5 @@ p {
   .page {
     padding-left: calc(280px + 0.7em);
     height: 100vh;
-  }
-}
-
-@media screen and (max-height: 500px) and (orientation: landscape) {
-
-  .rotate-device {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
-    background: #013d61;
-    z-index: 1;
-    color: rgb(200, 200, 200);
-    text-align: center;
-  }
-
-  .rotate-device img {
-    display: block;
-    height: 50%;
-    margin: 2em auto;
-  }
-  
-  .rotate-device p {
-    font-size: 1.4em;
-    font-weight: bold;
   }
 }

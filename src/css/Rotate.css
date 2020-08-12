@@ -1,0 +1,37 @@
+.rotate-device {
+    display: none;
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .user-info,
+    .page,
+    .home,
+    .background-image,
+    .nav-bar {
+      display: none;
+    }
+  
+    .rotate-device {
+      color: white;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      display: block;
+      background: #013d61;
+      z-index: 1;
+      text-align: center;
+    }
+  
+    .rotate-device img {
+      display: block;
+      height: 30vw;
+      margin: 2em auto 0.5em;
+    }
+    
+    .rotate-device p {
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+}
