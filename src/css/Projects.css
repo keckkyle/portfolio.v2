@@ -36,7 +36,7 @@
 .details {
     z-index: 10;
     background: white;
-    overflow: scroll;
+    overflow: auto;
     box-sizing: border-box;
     padding: 0.5em 0.7em 1.2em;
     margin-top: 2.5em;

@@ -119,7 +119,7 @@
     @media (min-width: 500px) {
         .user-details,
         .user-details.hidden-details {
-          overflow: scroll;
+          overflow: auto;
           padding: 0.5em 0.7em 4em;
         }
     }
