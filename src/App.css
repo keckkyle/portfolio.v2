@@ -68,7 +68,7 @@ p {
   right: 0;
   background: white;
   text-align: justify;
-  overflow: scroll;
+  overflow: auto;
   box-sizing: border-box;
   padding: 0.5em 0.7em 1.2em;
 }

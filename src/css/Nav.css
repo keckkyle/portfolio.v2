@@ -63,8 +63,9 @@
 @media screen and (min-width: 675px) {
 
   .nav-bar {
+    /* top: 0;
+    left: 0; */
     width: 280px;
-    max-width: 280px;
   }
 
   .nav-image-item {

@@ -96,6 +96,8 @@
 
 @media screen and (min-width: 675px) {
     .user-info {
+        /* top: 5em;
+        bottom: 0; */
         width: 280px;
     }
 
