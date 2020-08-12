@@ -24,7 +24,7 @@ const moreStyle = {
     display: "block",
     textDecoration: "none",
     fontWeight: 700,
-    color: "#004650",
+    color: "#013d61",
     padding: "0.5em 0"
 }
 const readStyle = {
@@ -32,7 +32,7 @@ const readStyle = {
     display: "block",
     textDecoration: "none",
     fontWeight: 700,
-    color: "#004650",
+    color: "#013d61",
 }
 
 const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];

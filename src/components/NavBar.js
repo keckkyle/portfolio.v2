@@ -1,5 +1,6 @@
 import React from 'react'
 import NavItem from './NavItem'
+import '../css/Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPortrait, faArchive, faHome } from '@fortawesome/free-solid-svg-icons'
 
@@ -12,7 +13,7 @@ const NavBar = (props) => {
         backgroundImage: `url(${props.image})`,
     }
     return(
-        <div className="NavBar">
+        <div className="nav-bar">
             <NavItem icon={props.current === "/about" ? home : about}>
                 {props.current === "/about" ? "Home" : "About"}
             </NavItem>

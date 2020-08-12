@@ -1,10 +1,11 @@
 import React from 'react';
-import Image from './ProfileImage'
-import IconLink from './IconLink'
-import NavBar from './NavBar'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons'
+import Image from './ProfileImage';
+import IconLink from './IconLink';
+import NavBar from './NavBar';
+import '../css/Details.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons';
 
 const linkedin = <FontAwesomeIcon icon={faLinkedin} title="LinkedIn"/>
 const github = <FontAwesomeIcon icon={faGithub} title="GitHub"/>
@@ -14,24 +15,24 @@ const file = <FontAwesomeIcon icon={faFile} title="file"/>
 const UserDetails = (props) => {
     let classes = ""
     if(!props.show){
-        classes = "UserDetails HiddenDetails"
+        classes = "user-details hidden-details"
     } else {
-        classes = "UserDetails"
+        classes = "user-details"
     }
 
     return(
         <div className={classes}>
-            <div className="UserInfo">
+            <div className="user-info">
                 <div className="close" onClick={props.toggleDisplay}>
                     ×
                 </div>
                 <Image img={props.image}/>
-                <div className="UserText">
+                <div>
                     <h1>Kyle Andrew Keck</h1>
                     <h2>Web Developer</h2>
                     <p>"Once a year, go someplace you've never been before." -Dalai Lama</p>
                 </div>
-                <div className = "ContactTypes">
+                <div className = "contact-types">
                 <IconLink 
                     icon={linkedin} 
                     link="https://www.linkedin.com/in/kyle-keck-6246a831/" 

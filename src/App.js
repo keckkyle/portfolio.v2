@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { MobileView } from 'react-device-detect';
 import './App.css';
+import './css/Transitions.css';
 import rotate from './images/rotate.png';
 
 

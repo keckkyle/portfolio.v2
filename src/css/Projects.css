@@ -1,5 +1,5 @@
 .Project {
-    border-bottom: 1px solid #004650;
+    border-bottom: 1px solid #013d61;
 }
 
 .Project:last-child {
@@ -16,7 +16,7 @@
 }
 
 .project-link {
-    color: #004650;
+    color: #013d61;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -157,7 +157,7 @@
 
     .project-title h4 {
         margin-left: 0;
-        color: #004650;
+        color: #013d61;
         font-weight: 300;
     }
 

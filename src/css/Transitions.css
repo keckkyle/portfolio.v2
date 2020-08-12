@@ -1,0 +1,59 @@
+.About-enter {
+    transform: translateX(-100vw);
+}
+
+.About-enter-active {
+    transform: translateX(0);
+    transition: transform 400ms;
+}
+
+.About-exit {
+    transform: translateX(0);
+}
+
+.About-exit-active {
+    transform: translateX(-100vw);
+    transition: transform 400ms;
+}
+
+.Projects-enter {
+    transform: translateX(100vw);
+}
+
+.Projects-enter-active {
+    transform: translateX(0);
+    transition: transform 400ms;
+}
+
+.Projects-exit {
+    transform: translateX(0);
+}
+
+.Projects-exit-active {
+    transform: translateX(100vw);
+    transition: transform 400ms;
+}
+
+.Home-enter {
+    transform: scale(0.75);
+    opacity: 0;
+    transform-origin: bottom;
+}
+
+.Home-enter-active {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 400ms;
+}
+
+.Home-exit {
+    transform: scale(1);
+    opacity: 1;
+    transform-origin: bottom;
+}
+
+.Home-exit-active {
+    transform: scale(0.75);
+    opacity: 0;
+    transition: all 400ms;
+}
