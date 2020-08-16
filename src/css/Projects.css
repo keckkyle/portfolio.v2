@@ -1,12 +1,8 @@
-.Project {
-    border-bottom: 1px solid #013d61;
-}
-
-.Project:last-child {
+.project-link:last-child {
     border-bottom: none;
 }
 
-.Project img {
+.project-img {
     width: 85%;
     max-width: 300px;
     display: block;
@@ -21,7 +17,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.5em 0;
+    border-bottom: 1px solid #013d61;
+    padding: 0.35em 0;
   }
 
 .text {
@@ -36,24 +33,12 @@
 .details {
     z-index: 10;
     background: white;
-    overflow: auto;
     box-sizing: border-box;
-    padding: 0.5em 0.7em 1.2em;
     margin-top: 2.5em;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 5em;
-    transform: translateX(110vw);
-    transition: transform 0.4s linear;
-}
-  
-.details.open {
-    transform: translateX(0)
 }
 
 .project-title {
+    background: rgb(200, 200, 200); 
     display: flex;
     align-items: center;
     padding: 0.2em 0.4em;
@@ -63,10 +48,6 @@
     top: 0;
     left: 0;
     right: 0;
-    transform-origin: center;
-    transform: translate(110vw, 0);
-    transition: transform 0.4s linear;
-    background: rgb(200, 200, 200);
   }
   
   .project-title h4 {
@@ -75,7 +56,7 @@
   }
   
   .project-title button {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Roboto', sans-serif;
     outline: none;
     background: transparent;
     border: none;
@@ -90,21 +71,11 @@
 
 
 @media screen and (min-width: 675px) {
-    .details {
-        height: calc(100vh - 2.7em) ;
-    }
-
-    .details,
     .project-title {
-        width: calc(100vw - 280px);
+        left: 280px;
     }
 
-    .project-title.open,
-    .details.open {
-        transform: translate(280px,0)
-    }
-
-    .details img {
+    .project-img {
         width: 40vw;
     }
 }
