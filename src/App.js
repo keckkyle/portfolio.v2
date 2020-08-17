@@ -15,7 +15,7 @@ import rotate from './images/rotate.png';
 
 class App extends React.Component {
   state = {
-    smallScreen: false,
+    largeScreen: true,
     displayDetails: true,
     image: "https://s3.amazonaws.com/keckkyle.com.images/portrait.jpg",
     currentView: window.location.pathname,
@@ -39,7 +39,7 @@ class App extends React.Component {
 
   updateWidth = () => {
     this.setState({
-      smallScreen: window.innerWidth < 675 ? true : false
+      largeScreen: window.innerWidth < 850 ? false : true
     })
   }
   
@@ -57,7 +57,7 @@ class App extends React.Component {
   }
 
   render(){
-    const { smallScreen, displayDetails, image, projects } = this.state
+    const { largeScreen, displayDetails, image, projects } = this.state
     const projectPreview = projects.slice(0,2)
     return (
       <div className="App">
@@ -98,14 +98,16 @@ class App extends React.Component {
                     unmountOnExit
                     onEnter={() => this.setDetails("projects")}
                   >
-                      <Projects projects={projects}/>
+                      <Projects 
+                        projects={projects}
+                        largeScreen={largeScreen}
+                      />
                   </CSSTransition>
                 )}
             </Route>
           </div>
         </div>
         <Details 
-          smallScreen = {smallScreen}
           show={displayDetails}
           image={image} 
           setDetails={this.setDetails}
@@ -113,9 +115,11 @@ class App extends React.Component {
           toggleDisplay = {this.toggleDisplay}
         />
         <MobileView>
-          <div className="rotate-device">
-            <img src={rotate} alt="Rotate device"/>
-            <p>Please turn your device</p>
+          <div className="rotated">
+            <div className="message">
+              <img src={rotate} alt="Rotate device"/>
+              <p>Please turn your device</p>
+            </div>
           </div>
         </MobileView>
       </div>

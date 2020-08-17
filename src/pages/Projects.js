@@ -31,28 +31,40 @@ class Projects extends React.Component {
         const { projects } = this.props
         return (
             <div className="page">
-                <div className="Projects">
+                <div className="projects">
                     <h3>Projects</h3>
-                    <div className="project-list">
-                        {projects.map((item, index) =>
-                            <div key={item.id} onClick={() => this.openProject(index)} className="project-link">
-                                <p className="text">{item.title}</p>
-                                <p className="arrow">➤</p>
-                            </div>
-                        )}   
-                    </div>  
-                    <CSSTransition
-                        in = {viewProject}
-                        timeout = {400}
-                        classNames = 'Projects'
-                        unmountOnExit
-                        onExited = {() => this.setProjectIndex(-1)}
-                    >
-                        <Project 
-                          project={projects[projectIndex]} 
-                          closeProject={this.setViewProject}
-                        />
-                    </CSSTransition>
+                    {this.props.largeScreen ? 
+                        <>
+                            {projects.map( item => 
+                                <Project project={item} />
+                            )}
+                        </> 
+                    : 
+                        <>
+                            <div className="project-list">
+                                {projects.map((item, index) =>
+                                    <div key={item.id} onClick={() => this.openProject(index)} className="project-link">
+                                        <p className="text">{item.title}</p>
+                                        <p className="arrow">➤</p>
+                                    </div>
+                                )}   
+                            </div>  
+                            <CSSTransition
+                              in = {viewProject}
+                              timeout = {400}
+                              classNames = 'Projects'
+                              unmountOnExit
+                              onExited = {() => this.setProjectIndex(-1)}
+                            >
+                                <div className="page">
+                                    <Project 
+                                      project={projects[projectIndex]} 
+                                      closeProject={this.setViewProject}
+                                    />
+                                </div>
+                            </CSSTransition>
+                        </>
+                    }
                 </div>
             </div>
         )
