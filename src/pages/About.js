@@ -12,52 +12,31 @@ import swift from '../images/swift.svg';
 import sqlite from '../images/sqlite.svg';
 import postgresql from '../images/postgresql.svg';
 
+const skills = [
+    ["HTML", html], 
+    ["CSS", css], 
+    ["JavaScript", js], 
+    ["React.js", logoReact], 
+    ["Python", python], 
+    ["Java", java], 
+    ["Swift", swift], 
+    ["SQLite", sqlite], 
+    ["PostgreSQL", postgresql], 
+    ["Github", github]
+];
+
 const About = (props) => (
     <div className="page">
         <div className="about">
             <section>
                 <h3>Skills</h3>
                 <ul>
-                    <li>
-                        <img src={html} alt="Technology logo"/>
-                        HTML
-                    </li>
-                    <li>
-                        <img src={css} alt="Technology logo"/>
-                        CSS
-                    </li>
-                    <li>
-                        <img src={logoReact} alt="Technology logo"/>
-                        React.js
-                    </li>
-                    <li>
-                        <img src={js} alt="Technology logo"/>
-                        JavaScript
-                    </li>
-                    <li>
-                        <img src={python} alt="Technology logo"/>
-                        Python
-                    </li>
-                    <li>
-                        <img src={java} alt="Technology logo"/>
-                        Java
-                    </li>                
-                    <li>
-                        <img src={swift} alt="Technology logo"/>   
-                        Swift
-                    </li>
-                    <li>
-                        <img src={sqlite} alt="Technology logo"/>
-                        SQLite
-                    </li>
-                    <li>
-                        <img src={postgresql} alt="Technology logo"/>
-                        PostgreSQL
-                    </li>
-                    <li>
-                        <img src={github} alt="Technology logo"/>
-                        Github
-                    </li>
+                    {skills.map( item =>
+                        <li>
+                            <img src={item[1]} alt="Technology logo" />
+                            {item[0]}
+                        </li>
+                    )}   
                 </ul>
             </section>
             <section>
