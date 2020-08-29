@@ -1,24 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import '../css/Home.css'
-
-
-import github from '../images/github.svg';
-import html from '../images/html.svg';
-import css from '../images/css.svg';
-import js from '../images/js.svg';
-import logoReact from '../images/react.svg';
-import python from '../images/python.svg';
-import java from '../images/java.svg';
-import swift from '../images/swift.svg';
-import sqlite from '../images/sqlite.svg';
-import postgresql from '../images/postgresql.svg';
-import spartan from '../images/spartan.svg';
-import michigan from '../images/michigan.svg';
-import travel from '../images/travel.svg';
-import teacher from '../images/teacher.svg';
-import petronas from '../images/petronas.svg';
-
+import '../css/Home.css';
+import { skills, about } from '../Constants'
 
 const moreStyle = {
     display: "block",
@@ -35,9 +18,6 @@ const readStyle = {
     color: "#013d61",
 }
 
-const technologies = [html, css, js, logoReact, python, java, swift, sqlite, postgresql, github];
-const about = [michigan, travel, spartan, teacher, petronas];
-
 const Home = (props) => {
     return(
         <div className="home">
@@ -45,8 +25,8 @@ const Home = (props) => {
                 <section>
                     <h3>Skills</h3>
                     <div className="images">
-                        {technologies.map(item => 
-                            <img key={item} className="tech-logo" src={item} alt="technology logo"/>
+                        {skills.map(item => 
+                            <img key={item} className="tech-logo" src={item[1]} alt="technology logo"/>
                         )}
                     </div>
                     <h3>About Me</h3>

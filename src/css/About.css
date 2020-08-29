@@ -18,3 +18,26 @@ ul li img {
 section {
     margin-bottom: 1em;
 }
+
+.about-me {
+    max-width: 600px;
+    margin: auto;
+}
+
+.about-item {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.about-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.about-item p {
+    margin: 0 0.5em;
+}
+
+.about-item img {
+    height: 70px;
+}
