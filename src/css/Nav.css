@@ -61,11 +61,13 @@
 }
 
 @media screen and (min-width: 675px) {
-
   .nav-bar {
+    padding: 0.75em 0;
     top: 0;
     left: 0;
     width: 280px;
+    flex-direction: column;
+    align-content: center;
   }
 
   .nav-image-item {
@@ -73,6 +75,18 @@
   }
 
   .nav-item {
-    width: 50%;
+    width: 100%;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nav-bar .nav-text {
+    font-size: 1em;
+  }
+
+  .nav-icon {
+    width: 25%;
   }
 }
