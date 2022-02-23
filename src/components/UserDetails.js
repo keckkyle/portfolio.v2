@@ -45,10 +45,10 @@ const UserDetails = (props) => {
                     icon={mail} 
                     link="mailto:keckkyle@gmail.com" 
                 />
-                <IconLink 
+                {/* <IconLink 
                     icon={file} 
                     link="https://www.keckkyle.com/files/06.20.pdf" 
-                />
+                /> */}
                 </div>
             </div>
             <NavBar 
