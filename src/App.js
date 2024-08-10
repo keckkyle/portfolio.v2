@@ -1,130 +1,14 @@
-import React from 'react';
-import axios from 'axios';
-import Details from './components/UserDetails';
-import Home from './pages/Home'
-import About from './pages/About';
-import Projects from './pages/Projects';
-import { Route } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
-import { MobileView } from 'react-device-detect';
-import './App.css';
-import './css/Transitions.css';
-import './css/Rotate.css';
-import rotate from './images/rotate.png';
+import logo from "./logo.svg";
+import "./App.css";
 
-
-class App extends React.Component {
-  state = {
-    largeScreen: true,
-    displayDetails: true,
-    image: "https://s3.amazonaws.com/keckkyle.com.images/portrait.jpg",
-    currentView: window.location.pathname,
-    projects: []
-  }
-
-  componentDidMount = () => {
-    this.updateWidth();
-    window.addEventListener('resize', this.updateWidth)
-    axios.get('https://1eovf4zr73.execute-api.us-east-1.amazonaws.com/production/projects')
-    .then(result => {
-      const projectList = result.data.body
-      this.setState({
-          projects: projectList.sort((a, b) => (a.id < b.id) ? 1: -1),
-      })
-    })
-    .catch(error => {
-      console.log('Error: ', error)
-    })
-  }
-
-  updateWidth = () => {
-    this.setState({
-      largeScreen: window.innerWidth < 850 ? false : true
-    })
-  }
-  
-  setDetails = (path) => {
-    this.setState({
-      currentView: `/${path}`,
-      displayDetails: false,
-    })
-  }
-
-  toggleDisplay = () => {
-    this.setState({
-      displayDetails: !this.state.displayDetails,
-    })
-  }
-
-  render(){
-    const { largeScreen, displayDetails, image, projects } = this.state
-    const projectPreview = projects.slice(0,2)
-    return (
-      <div className="App">
-        <div className="background-image">
-          <div className="opaque-background">
-            <Route path="/" exact>
-              {({match}) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout = {400}
-                  classNames = 'Home'
-                  unmountOnExit
-                  onEnter={() => this.setDetails("")}
-                >
-                  <Home projects={projectPreview}/>
-                </CSSTransition>
-              )}
-            </Route>
-            <Route path="/about" exact>
-                {({match}) => (
-                  <CSSTransition
-                    in={match != null}
-                    timeout = {400}
-                    classNames = 'About'
-                    unmountOnExit
-                    onEnter={() => this.setDetails("about")}
-                  >
-                      <About />
-                  </CSSTransition>
-                )}
-            </Route>
-            <Route path="/projects" exact>
-                {({match}) => (
-                  <CSSTransition
-                    in={match != null}
-                    timeout = {400}
-                    classNames = 'Projects'
-                    unmountOnExit
-                    onEnter={() => this.setDetails("projects")}
-                  >
-                      <Projects 
-                        projects={projects}
-                        largeScreen={largeScreen}
-                      />
-                  </CSSTransition>
-                )}
-            </Route>
-          </div>
-        </div>
-        <Details 
-          show={displayDetails}
-          image={image} 
-          setDetails={this.setDetails}
-          current = {this.state.currentView}
-          toggleDisplay = {this.toggleDisplay}
-        />
-        <MobileView>
-          <div className="rotated">
-            <div className="message">
-              <img src={rotate} alt="Rotate device"/>
-              <p>Please turn your device</p>
-            </div>
-          </div>
-        </MobileView>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>Nothing here, sorry</p>
+      </header>
+    </div>
+  );
 }
 
 export default App;

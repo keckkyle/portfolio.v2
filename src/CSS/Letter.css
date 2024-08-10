@@ -1,0 +1,35 @@
+.letter-container {
+  overflow: hidden;
+}
+
+.letter {
+  transition: 1s;
+}
+
+.visible {
+  opacity: 1;
+  color: black;
+  transform: translateY(0);
+  transform-origin: top;
+  z-index: -100;
+}
+.not-visible {
+  opacity: 0;
+  transform: translateY(-100vw);
+}
+
+.letter p {
+  line-height: 1.4;
+  font-family: "Josefin Sans";
+  font-size: 1.15em;
+  margin: 0;
+  padding-bottom: 10px;
+  text-align: justify;
+}
+.first-word {
+  font-size: 1.75em;
+  font-family: Whisper;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-right: 2px;
+}

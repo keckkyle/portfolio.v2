@@ -1,0 +1,11 @@
+.container {
+  padding: 10px;
+  background-color: #eaeaff;
+}
+
+.salutation {
+  margin: 0;
+  font-size: 2.5em;
+  font-family: Whisper;
+  padding-left: 45px;
+}

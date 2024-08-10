@@ -1,90 +1,38 @@
-/* background-color: #013d61; */
-
-body {
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-  background: #013d61;
-}
-
-h1 {
-  font-size: 1.75em;
-  font-weight: 700;
-  margin-bottom: 0.2em;
-}
-
-h2 {
-  font-size: 1.3em;
-  font-weight: 700;
-  margin-bottom: 0.2em;
-}
-
-h3 {
-  font-size: 1.2em;
-  font-weight: 700;
+.App {
   text-align: center;
-  color: #013d61;
 }
 
-h4 {
-  font-weight: 700;
-  color: #013d61;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-p {
-  line-height: 1.2;
-}
-
-.opaque-background {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  background: rgba(255,255,255,0.6);
-  box-shadow: inset 0 0 10px 1px black;
-}
-
-.background-image {
-  background-image: url(https://s3.amazonaws.com/keckkyle.com.images/walk.jpeg);
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 5em;
-  right: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.hidden-text{
-  position: fixed;
-  top: -100vh;
-  opacity: 0;
-}
-
-.page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 5em;
-  right: 0;
-  background: white;
-  text-align: justify;
-  overflow: auto;
-  box-sizing: border-box;
-  padding: 1em 1em 1.2em;
-}
-
-.page p {
-  padding: 0.5em 0;
-}
-
-@media screen and (min-width: 675px) {
-  .background-image {
-    bottom: 0;
-    margin-left: 280px;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
+}
 
-  .page {
-    padding-left: calc(280px + 1em);
-    height: 100vh;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
