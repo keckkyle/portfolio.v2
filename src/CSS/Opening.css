@@ -24,8 +24,7 @@
 }
 
 .fixed p {
-  flex: 0.25;
-  font-size: clamp(2.6em, 2.5vw, 5.2em);
+  font-size: clamp(1.6em, 2.5vw, 5.2em);
   font-family: Whisper;
   font-weight: bold;
   text-align: center;
@@ -50,6 +49,7 @@
     rgba(75, 75, 125, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
+  min-height: 100px;
 }
 
 .exit p {
