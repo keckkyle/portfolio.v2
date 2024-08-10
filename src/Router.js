@@ -1,6 +1,5 @@
 import App from "./App";
 import Bryan from "./Components/Bryan";
-import logo from "./logo.svg";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -9,7 +8,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/buchheister/text/20240810/something-i-wrote-to-you",
+    path: "/20240810/letter/to-you/from-me/thoughts-on-us",
     element: <Bryan />,
   },
 ]);

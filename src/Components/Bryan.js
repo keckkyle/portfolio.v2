@@ -5,7 +5,6 @@ import Signature from "./Signature";
 import Opening from "./Opening";
 
 function Bryan() {
-  const [containerClass, setContainerClass] = React.useState("black");
   const [show, setShow] = React.useState(false);
 
   return (
